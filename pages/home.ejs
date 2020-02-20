@@ -1,0 +1,17 @@
+<%- include('../views/partials/header.ejs') %> 
+<% console.log("user",user) %>
+<img class="userImg"
+src='<%=user.avatarUrl%>' style= float:left; margin: auto />
+<div class="bg">
+  <%console.log('hi',friends, title) %>
+<% friends.forEach(friend => { %>
+  <div class="friend" >
+    <%console.log(friend) %>
+  <img class="friend" src='<%friend.avatarUrl%>' style= float:right/>
+</div>
+<% }); %> 
+
+</div>
+
+
+<%- include('../views/partials/footer.ejs') %>

@@ -1,0 +1,21 @@
+<%- include('../views/partials/header.ejs') %>
+
+<img
+  class="face"
+  src="/images/friendface_logo.png"
+  height="150px"
+  width="400px"
+/>
+
+<form class="signup" method="get" action="/getname" class="signin-form">
+  <label class="name" for="firstName">First name</label>
+  <input
+    class="txtbox"
+    placeholder="Place First Name Here"
+    type="text"
+    name="firstName"
+  />
+  <button class="sub" type="submit">Submit</button>
+</form>
+
+<%- include('../views/partials/footer.ejs') %>
