@@ -9,10 +9,39 @@
   left: 50%;
   top: 50%;
   margin: -75px 0 0 -135px;
+  border: 2px solid black;
+  padding: 150px;
+  background-color: lightgrey;
 }
 
+.my{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  width: 560px;
+  left: 50%;
+  top: 50%;
+  margin: 0 0 0 500px;
+}
 .name {
   display: none;
+}
+
+.friend{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 25px;
+}
+.friended {
+  border-radius: 40%;
+}
+.text{
+  text-align: center;
+  font-size: 1.6rem;
+  color: white;
 }
 
 .txtbox {
@@ -30,4 +59,20 @@
   background-color: green;
   text-align: center;
   font-size: 2rem;
+}
+
+.site-title{
+  background-color: green;
+  color: white;
+  font-style: bold;
+  text-align: center;
+  font-size: 4rem;
+}
+
+/// display flexing on these hoes...
+
+.bg {
+  display: flex;
+  flex-direction: row;
+  background-color: green;
 }
