@@ -11,15 +11,13 @@ const handleHome = (req, res) => {
     res.redirect("/signin");
     return;
   }
-  const friends = getFriends();
+  const friends = getFriends(currentUser);
   console.log(friends);
   res.render("../pages/home", {
     user: currentUser,
     title: `Welcome to ${currentUser.name}'s home page!!!!`,
     friends: friends,
   });
-  console.log(currentUser);
-  console.log(friends)
 };
 const handleSignin = (req, res) => {
   if (currentUser) {
@@ -35,22 +33,29 @@ const handleUser = (req, res) => {
     res.redirect("/");
     return;
   }
-  const id = req.params.id;
-  res.send(`user id is ${id}`);
+  const selectedFriend = users.find(user => { 
+      return user.id === req.params.id}
+    );
+ 
+  const selectedFriendFriends = getFriends(selectedFriend);
+  res.render('../pages/home', {
+    user: selectedFriend,
+    title: `Welcome to ${selectedFriend.name}'s home page!!!!`,
+    friends: selectedFriendFriends
+  });
 };
 const handleName = (req, res) => {
   const firstName = req.query.firstName;
   currentUser = users.find(user => user.name === firstName);
   res.redirect(`${currentUser ? "/" : "/signin"}`);
-  console.log(firstName);
   res.send(`name recieved.`);
 };
 
-const getFriends = () => {
+const getFriends = (user) => {
   let threeFriends = [];
-  currentUser.friends.forEach(friend => {
+  user.friends.forEach(amis => {
     users.forEach(user => {
-      if (user.id === friend) {
+      if (user.id === amis) {
         threeFriends.push(user);
       }
     });

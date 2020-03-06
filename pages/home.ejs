@@ -1,16 +1,16 @@
 <%- include('../views/partials/header.ejs') %> 
 <% console.log("user",user) %>
-<img class="userImg"
-src='<%=user.avatarUrl%>' style= float:left; margin: auto />
+<img class="my"
+src='<%=user.avatarUrl%>'   height="500px"
+width= auto />
 <div class="bg">
-  <%console.log('hi',friends, title) %>
 <% friends.forEach(friend => { %>
   <div class="friend" >
-    <%console.log(friend) %>
-  <img class="friend" src='<%friend.avatarUrl%>' style= float:right/>
+  <a href="/user/<%-friend.id%>"><img class="friended" src='<%-friend.avatarUrl%>' height="250px"
+  width="400px"/> 
+  <div class="text"> YOOOO check out <%- `${friend.name}'s page`%> </div>
 </div>
 <% }); %> 
-
 </div>
 
 
